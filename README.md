@@ -27,6 +27,7 @@ This repository is strictly for individuals who wrote either their CGPA or Trans
 - Commit and Push your works and updates to the submission branch you've been working on
 
 - When finally done, create a PR with the title "**submission**" after correctly checking everything on the PR template
-- 
+
+
 
 [![Open Source Love png3](https://badges.frapsoft.com/os/v3/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
