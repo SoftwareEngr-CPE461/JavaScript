@@ -16,17 +16,15 @@ This repository is strictly for individuals who wrote either their CGPA or Trans
 
 - Head on to the forked repository if using remote access or the cloned repository if making changes from your local machine.
 
-- Make sure to avoid making changes to **main branch** by switching to  **submissions branch**. Use ``git switch submissions`` or ``git checkout submissions`` to switch to the submission branch first
+- Navigate to submissions directory in the repository inside C folder
 
-- Navigate to submissions folder in the repository under the **submissions branch**
-
-- Create a new folder inside **submissions** folder with your *Matriculation Number* as the folder name Example: (Folder name): ENG1503XXXX 
+- Create a new folder inside submissions with your *Matriculation Number* as the folder name Example: (Folder format): ENG1503XXXX 
 
 - Place all related codes in this personally created folder
 
-- Commit and Push your works and updates to the submission branch you've been working on
+- Commit and Push your works and updates
 
-- When finally done, create a PR with the title "**submission**" after correctly checking everything on the PR template
+- When finally done, create a PR to the **submission branch** with the PR title "**submission**" after correctly checking everything on the PR template
 
 
 
