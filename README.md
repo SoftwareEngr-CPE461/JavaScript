@@ -4,7 +4,7 @@
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
 
-This repository is strictly for individuals who wrote either their CGPA or Transcript Generator projects or codes with **JavaScript***
+This repository is strictly for individuals who wrote either their CGPA or Transcript Generator projects or codes with **JavaScript**.
 
 ## How do I submit my project file/code? :detective:
 
