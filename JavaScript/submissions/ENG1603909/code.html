@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Traniscript And GPA Processor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="StyleSheet1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <style>
+        /*for the table design*/
+
+        .wrapper {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px;
+        }
+
+        table {
+            margin-top: 30px;
+        }
+
+        .display-none {
+            display: none;
+        }
+
+        tbody {
+            text-transform: uppercase;
+        }
+
+        #buttons {
+            margin: 50px;
+            padding: 8px;
+        }
+
+        .form-row {
+            margin: 70px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 22px;
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            font-family: "apple-chancery";
+            width: 100%;
+            height: auto;
+            margin: 0;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- jumbotron code -->
+    
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">STUDENT TANSCIRPT AND GPA CACULATOR</h1>
+            </div>
+        </div>
+    <main>
+        <!--  -->
+        <div>
+            <div id="hide2">
+                <center>
+                    <div class="alert alert-primary" role="alert">
+                        <p><b>Gpa caculator Note:</b><i> in order to caculate your grades </i> </p>
+                    </div>
+                    <table id="tablemain">
+                        <tr>
+                            <td class="alert alert-success">A</td>
+                            <td class="alert alert-success">is given the value</td>
+                            <td class="alert alert-success">4.0</td>
+                        </tr>
+                        <tr>
+                            <td class="alert alert-secondery">B</td>
+                            <td class="alert alert-secondery">is given the value</td>
+                            <td class="alert alert-secondery">3.0</td>
+                        </tr>
+                        <tr>
+                            <td class="alert alert-warning">C</td>
+                            <td class="alert alert-warning">is given the value</td>
+                            <td class="alert alert-warning">2.0</td>
+                        </tr>
+                        <tr>
+                            <td class="alert alert-danger">D</td>
+                            <td class="alert alert-danger">is given the value</td>
+                            <td class="alert alert-danger">1.0</td>
+                        <tr>
+                            <td class="alert alert-dark">F</td>
+                            <td class="alert alert-dark">is given the value</td>
+                            <td class="alert alert-dark">0.0</td>
+                        </tr>
+                    </table>
+                   
+                </center>
+            </div>
+            <!-- from code for student details -->
+            <div id="innerE" >
+                <form auto method="post" action="process.html">
+                    <center>
+                        <div id="ideal" role="alert">
+                            <h2>STUDENT DETAILS</h2>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationDefault01">Student Name</label>
+                                    <input type="text" class="form-control" id="StudentName" placeholder="Enter your name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationDefault02">Faculty</label>
+                                    <input type="text" class="form-control" id="Faculty" placeholder="Enter your Faculty" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationDefault03">Matriculation Number</label>
+                                    <input type="text" class="form-control" id="MatriculationNumber" placeholder="Enter your Mat Number" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationDefault03">Department</label>
+                                    <input type="text" class="form-control" id="Department" placeholder="Enter your Department" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-3 mb-3">
+                                    <label for="validationDefault05">Level</label>
+                                    <select class="custom-select" id="Level" placeholder="Enter your Level" required>
+                                        <option>100L</option>
+                                        <option>200L</option>
+                                        <option>300L</option>
+                                        <option>400L</option>
+                                        <option>500L(Final year)</option>
+                                    </select>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="Male" value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="Female" value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2">Female</label>
+                                </div>
+                            </div>
+                        </div>
+              </center>
+              </form>
+            </div>
+            <div role="alert">
+                <center>
+                <h3>COURSE DETAILS</h3>
+                </center>
+            </div>
+        </div>
+        <div class="wrapper">
+
+            <div id="hide3">
+                <center>
+                    <div class="form-row">
+                        <div class="col">
+                            <input id="course-code" class="form-control" type="text" placeholder="Course Code">
+                        </div>
+                        <div class="col">
+                            <input id="unit-load" class="form-control" type="number" placeholder="Unit Load" min="1" max="15">
+                        </div>
+                        <div class="col">
+                            <select id="grade" class="form-control">
+                                <option value="">Grade</option>
+                                <option value="4">A</option>
+                                <option value="3">B</option>
+                                <option value="2">C</option>
+                                <option value="1">D</option>
+                                <option value="0">F</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <input id="add" class="btn btn-primary" type="button" value="Add">
+
+                        </div>
+                    </div>
+                </center>
+            </div>
+
+            <!-- table code -->
+            <div>
+                <table id="table" class="table table-bordered display-none">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Unit Load</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                    <tfoot id="tfoot">
+
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="row" id="hide4">
+                <div class="col">
+                    <input id="calc-gp" class="btn btn-success display-none" type="button" value="Calculate">
+                </div>
+                <div class="col">
+                    <input id="clear" class="btn btn-primary display-none" type="button" value="Clear">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- print button -->
+    <div id="buttons">
+        <center>
+            <button type="button" class="btn btn-primary" onclick="myPrint()">Print this page</button>
+        </center>
+    </div>
+
+    <!-- footer code -->
+    <footer>
+        <div>
+            <address>
+                code by: OKERENWOGBA UZOR for my CPE461 ASSIGNMEMT
+            </address>
+        </div>
+    </footer>
+    <script src="JScript.js"></script>
+</body>
+</html>
