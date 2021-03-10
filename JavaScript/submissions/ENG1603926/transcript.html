@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Transcript Generator</title>
+    <link rel="icon" href="img/favicon.ico" type="image/png" />
+    <link rel="stylesheet" href="helpers/mdb.min.css" />
+</head>
+
+<body>
+    <!--Title Bar-->
+    <div class="d-print-none navbar navbar-expand-lg navbar-dark text-light bg-primary">
+        <div class="container">
+            <a class="navbar-brand">TRANSCRIPT GENERATOR</a>
+        </div>
+    </div>
+
+    <div class="container my-2">
+        <!--Notice-->
+        <p class="d-print-none note note-primary">
+            <span>This is the CPE461 assignment of ENG1603926. You can view the source code at <a href="https://github.com/ROWEND36/JavaScript/" class="badge bg-secondary">Github</a></span>
+        </p>
+        
+        <!--Enter Student Details-->
+        <form id="print_transcript" class="form d-print-none mb-4">
+            <div class="row">
+                <div class="mb-1 col-auto">
+                    <label for="student_name_in">Full Name</label>
+                    <input class="form-control w-auto" type="text" name="student_name_in" id="student_name_in" placeholder="LastName FirstName MiddleName" />
+                </div>
+                <div class="mb-1 col-auto">
+                    <label for="student_mat_in">Matriculation Number</label>
+                    <input class="form-control w-auto" type="text" name="student_mat_in" id="student_mat_in" placeholder="ENG160XXXX" />
+                </div>
+                <div class="mb-1 col-auto">
+                    <label for="student_lvl_in">Level</label>
+                    <input class="form-control w-auto" type="text" name="student_lvl_in" id="student_lvl_in" placeholder="100" />
+                </div>
+                <div class="mb-1 col-auto">
+                    <label for="stduent_dept_in">Department</label>
+                    <input class="form-control w-auto" type="text" name="student_dept_in" id="student_dept_in" placeholder="Computer Engineering" />
+                </div>
+            </div>
+
+            <div class="mt-md-1 w-100 col-lg-3 clearfix">
+                <input class="btn btn-primary float-end float-sm-none" type="submit" name="submit_btn" id="submit_btn" value="Print" />
+            </div>
+        </form>
+        
+        <!--Display Student Details only shown in print-->
+        <div class="d-none d-print-block mb-4">
+            <h4 class="text-center">RESULT TRANSCRIPT</h4>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="h6 p-1">Name Of Student</td>
+                        <td id="student_name">Owologba Owareoro Efemena</td>
+                    </tr>
+                    <tr>
+                        <td class="h6 p-1">Matriculation Number</td>
+                        <td id="student_mat">ENG1603926</td>
+                    </tr>
+                    <tr>
+                        <td class="h6 p-1">Level</td>
+                        <td id="student_lvl">400LVL</td>
+                    </tr>
+                    <tr>
+                        <td class="h6 p-1">Department</td>
+                        <td id="student_dept">Computer Engineering</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--Choose GPA Scale-->
+        <div class="d-print-none mb-4">
+            <label>GPA Scale</label>
+            <select id="gpa_scale" class="mx-2 d-inline form-select w-auto" aria-label="Select your GPA scale">
+                <option selected value="5">5.0</option>
+                <option value="4">4.0</option>
+                <!--<option value="canada">Canada 4.0 Scale</option>-->
+            </select>
+        </div>
+        
+        <!--Add A Single Course-->
+        <h5 class="d-print-none">Add Course</h5>
+        <form id="form" class='d-print-none mb-4 form row'>
+            <div class="row col-lg-9">
+
+                <div class="mb-1 col-auto">
+                    <label for="course_code">Course Name</label>
+                    <input class="form-control w-auto" type="text" name="course_code" id="course_code" value="" placeholder="eg. CPE4XX" />
+                </div>
+                <div class="mb-1 col-auto">
+                    <label for="credit_load">Credit Load</label>
+                    <input class="form-control w-auto" type="number" name="credit_load" id="credit_load" value="3" />
+                </div>
+                <div class="mb-1 col-md-auto">
+                    <label for="pick_grade">Pick Grade</label>
+                    <select class="form-control form-select w-auto" name="pick_grade" id="pick_grade">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mt-md-1 w-100 col-lg-3 clearfix">
+                <input class="btn btn-primary float-end float-sm-none" type="submit" name="submit_btn" id="submit_btn" value="Add" />
+            </div>
+        </form>
+        
+        <!--Results Table-->
+        <div style="width:100%;overflow:auto;">
+            <table class="table" border="1">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Course Code</th>
+                        <th>Credit Load</th>
+                        <th>Grade</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+        <p id="warning-if-empty" class="note note-warning text-center">No Courses Added</p>
+        
+        <!--Display GPA-->
+        <div class="text-center my-2">
+            <span class="h6">Student GPA:</span> <span id="gpa_preview"></span>
+        </div>
+        
+        <!--Buttons to calculate and clear-->
+        <div class="d-print-none w-100">
+            <button id="gpa_calculate" class="btn btn-primary">Calculate GPA</button>
+            <button id="gpa_clear" class="ms-sm-3 btn btn-danger float-end float-sm-none ">Reset</button>
+        </div>
+        
+        <!--Signatures of Dean only shown in print-->
+        <table class="d-none d-print-table mt-4">
+            <tbody>
+                <tr>
+                    <td class="px-5 text-center"><span class="h6">Head Of Department's Signature</span> </td>
+                    <td style="border-bottom: 2px dashed black;height:50px;width:300px"></td>
+                </tr>
+                <tr>
+                    <td class="px-5 text-center"><span class="h6">Dean's Signature</span> </td>
+                    <td style="border-bottom: 2px dashed black;height:50px;width:300px"></td>
+                </tr>
+                <tr>
+                    <td class="px-5 text-center"><span class="h6">Date</span> </td>
+                    <td style="border-bottom: 2px dashed black;height:50px;width:300px"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script type="text/javascript" src="helpers/mdb.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
