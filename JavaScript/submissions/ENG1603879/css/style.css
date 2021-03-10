@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 2em;
+}
+/* form styling begins here */
+#submit, button{
+    margin-top: 1em;
+    width: 10em;
+    height: 50px;
+    font-size: 1em;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+#submit:hover, button:hover{
+    background-color: gray;
+
+}
+#calculate:visited, :focus , #submit:visited, :focus{
+    background-color: #303094;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+/* calculator style */
+table{
+    border-collapse: collapse;
+    width: 35%;
+}
+th{
+    padding: 5px;
+}
+td, th{
+    border: 1px solid black;
+}
+/* form styling ends here */
+
+/* Transcript styling starts here */
+#text-header{
+    text-align: center; 
+}
+#header{
+    text-align: justify;
+}
+#logo{
+    float: left;
+}
+#text-header{
+    text-align: justify;
+    margin-left:300px; 
+}
+header{
+    font-weight:bold;
+    font-size:20px; 
+    text-align:center;
+}
+hr{
+    height:5px; 
+    width: 100%;
+    background-color:black;
+}
+.signature{
+    margin-top: 50px;
+}
+.signature hr{
+    height: 1px;
+    width: 10%;
+    text-align: left;
+    margin-left: 0;
+}
+section{
+    margin: 10px 50px 10px 150px;
+    font-size: 20px;
+}
+#result{
+    margin: 20px 250px 10px;
+}
+#transcriptTable{
+    width: 100%;
+    padding-left: 50px;
+}
+#transcriptTable td{
+    padding: 0 20px;
+}
+@media(min-width:992px) and (max-width:1119px){
+    #text-header{
+        margin-left: 200px;
+    }
+    section{
+        margin: 10px 100px;
+        width: 50%;
+    }
+    #result{
+        margin: 20px 100px 10px;
+    }
+    #transcriptTable{
+        width: 70%;
+    }
+}
